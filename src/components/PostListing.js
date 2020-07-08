@@ -12,10 +12,10 @@ export default function PostListing(props) {
     const postId = post.post.guid
     return (
         <div className="listing-container-item">
-            <img src={imgUrl} />
-            <p>{post.title}</p>
-            
-                <Link to={`/post/${postId}`} >postId</Link>
+            {/* <img src={imgUrl} /> */}
+            <br></br>
+            <p>{post.post.title}</p>
+            <Link to={{pathname:'/post/'+postId, state:{post}}} >Read more</Link>
         </div>
     )
 }

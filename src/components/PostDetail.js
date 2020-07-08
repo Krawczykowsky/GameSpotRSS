@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-
 
 export default function PostDetail(props) {
-    const [posts, setPost] = useState([]);
-    const [postId, setPostID] = useState([]);
+  const [posts, setPost] = useState([]);
+  const [postsUrl, setPostUrl] = useState();
 
-    useEffect(()=>{
-        console.log(posts.useHistory())
-      setPost(props.posts)
-      setPostID(props)
-    },[props])
-    // console.log(posts.map(q => q.guid))
-    // console.log(posts.filter(q => q.guid))
-    return (
-        <div className="listing-container-item">
-            <p>test123</p>
-        </div>
-    )
+
+  useEffect(() => {
+    setPost(props.location.state.post.post);
+    setPostUrl(props.location.state.post.post.mediaContent[0]["$"].url)
+  }, [props]);
+  
+  return (
+    <div className="listing-container-item">
+      <img src={postsUrl}/>
+      <p>{posts.title}</p>
+      {/* {posts.forEach(q => <p>{q.title}</p>)} */}
+    </div>
+  );
 }
