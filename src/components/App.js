@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import PostListing from "./PostListing";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function App(props) {
   const [query, setQuery] = useState([]);
@@ -40,19 +39,19 @@ function App(props) {
     return (
       <div>
         <Container>
-          <Row>
-            <Search posts={posts} getInputValue={() => getInputValue} />
-              {showAll
-                ? posts.map((post) => (
-                    <Col md={6}>
-                      <PostListing post={post} key={post.guid} />
-                    </Col>
-                  ))
-                : query.map((post) => (
-                    <PostListing post={post} key={post.guid} />
-                  ))}
+          <Search posts={posts} getInputValue={() => getInputValue} />
+          <div className="post-container">
+            {showAll
+              ? posts.map((post) => (
+                <PostListing post={post} key={post.guid} />
+              ))
+              : query.map((post) => (
+                <PostListing post={post} key={post.guid} />
+              ))}
             {showAllQuery ? <p>Brak wyników</p> : null}
-          </Row>
+          </div>
+
+
         </Container>
       </div>
     );

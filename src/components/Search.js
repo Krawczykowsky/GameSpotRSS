@@ -18,9 +18,7 @@ export default function Search(props) {
   }
   return (
     <div>
-      <input onChange={e => onChangeInput(e.target.value)}  /> <br />
-     
-   
+      <input className="search-input" onChange={e => onChangeInput(e.target.value)}  /> <br />
     </div>
   )
 }
