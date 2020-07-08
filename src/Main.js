@@ -14,7 +14,7 @@ function Main() {
   const [error, setError] = useState(null);
   const [posts, setPost] = useState([]);
   const [reload, setReload] = useState(true);
-
+  const bootstrap = require('bootstrap')
 
   const rssUrl =
     "https://fathomless-earth-31568.herokuapp.com/https://www.gamespot.com/feeds/mashup/";
