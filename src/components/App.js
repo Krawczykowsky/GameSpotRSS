@@ -31,8 +31,11 @@ function App(props) {
   if (error) {
     return (
       <div>
-        Error..
-        <button onClick={reloadHandler}>Reload</button>
+
+        <div className="reload-container" onClick={reloadHandler}>
+          <p>Connection error...</p>
+          Reload <i className="fa fa-refresh" aria-hidden="true"></i>
+        </div>
       </div>
     );
   } else {
@@ -48,7 +51,7 @@ function App(props) {
               : query.map((post) => (
                 <PostListing post={post} key={post.guid} />
               ))}
-            {showAllQuery ? <p>Brak wyników</p> : null}
+            {showAllQuery ? <p>No results</p> : null}
           </div>
 
 

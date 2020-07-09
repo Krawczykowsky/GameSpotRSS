@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './Main';
+import FeedPreview from './FeedPreview';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <FeedPreview url="https://www.gamespot.com/feeds/mashup/"/>
   </React.StrictMode>,
   document.getElementById('root')
 );
